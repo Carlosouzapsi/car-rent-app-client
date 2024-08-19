@@ -5,12 +5,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 import tw from "twin.macro";
 import { Marginer } from "../marginer";
 import { Button } from "../button";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { SCREENS } from "../responsive";
 
 const CardContainer = styled.div`
   min-height: 4.3em;
@@ -84,9 +85,20 @@ const DateCalendar = styled(Calendar)`
   position: absolute;
   max-width: none;
   user-select: none;
-  top: 1.5em;
-  left: -2em;
-`;
+  top: 2em;
+  left: 0;
+
+  ${({ offset }: any) =>
+    offset &&
+    css`
+      left: -6em;
+    `};
+
+  @media (min-width: ${SCREENS.md}) {
+    top: 3.5em;
+    left: -2em;
+  }
+` as any;
 
 export function BookCard() {
   const [startDate, setStartDate] = useState<Date>(new Date());
