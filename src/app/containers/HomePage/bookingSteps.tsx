@@ -89,9 +89,10 @@ const StepIcon = styled.span`
   `}
 `;
 
-export default function bookingSteps() {
+export function BookingSteps() {
   return (
     <Container>
+      <Title>Our Working Steps</Title>
       <StepsContainer>
         <StepContainer>
           <Step>
