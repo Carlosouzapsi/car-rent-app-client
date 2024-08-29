@@ -1,21 +1,21 @@
-import React from "react";
-import { ICar } from "../../../typings/car";
-import { styled } from "styled-components";
-import tw from "twin.macro";
-import { Button } from "../button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEllipsisH,
   faFillDrip,
   faTachometerAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
+import { ICar } from "../../../typings/car";
+import { Button } from "../button";
 
 interface ICarProps extends ICar {}
 
 const CarContainer = styled.div`
   width: 16.5em;
-  min-height: 24em;
-  max-height: 24em;
+  min-height: 23em;
+  max-height: 23em;
   box-shadow: 0 1.3px 17px -2px rgba(0, 0, 0, 0.4);
   ${tw`
     flex
@@ -154,11 +154,11 @@ export function Car(props: ICarProps) {
       <PricesContainer>
         <DailyPrice>
           ${dailyPrice}
-          <SmallText></SmallText>/Day
+          <SmallText>/Day</SmallText>
         </DailyPrice>
         <MonthlyPrice>
           ${monthlyPrice}
-          <SmallText></SmallText>/Month
+          <SmallText>/Month</SmallText>
         </MonthlyPrice>
       </PricesContainer>
       <Seperator />
